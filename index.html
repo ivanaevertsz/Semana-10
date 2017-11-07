@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario HTML</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+  
+
+</head>
+<body>
+
+
+
+	<img src="images/logo.png">
+
+		<nav>
+	<ul>
+		<li><a href="#"> Inicio </a></li>
+		<li><a href="" target="_blank"> Servicios </a></li>
+		<li><a href="" target="_blank"> Repuestos </a></li>
+		<li><a href="" target="_blank"> Contáctenos </a></li>
+
+	</ul>
+</nav>
+
+<br>
+<br>
+
+<div class="mydiv">
+<img class="mySlides" src="images/porsche2.jpg">
+<img class="mySlides" src="images/range1.jpg">
+<img class="mySlides" src="images/bmw2.jpg">
+<img class="mySlides" src="images/mb2.jpg">
+</div>
+
+
+<div class="intro">
+<h1> QUIENES SOMOS?</h1>
+<br>
+<p> Somos un equipo de profesionales comprometidos en ofrecer a todos nuestros clientes el mejor y más especializado servicio para su vehículo Mercedes Benz, BMW, Porsche, y Land Rover.
+<br><br>
+
+Contamos con una plataforma tecnológica que nos permite ofrecer un diagnóstico computarizado de su vehículo, así como un servicio personalizado cuidando cada detalle para garantizar la calidad en nuestro trabajo. 
+
+<br><br>
+
+Nuestra empresa, en el interés de brindar a nuestros clientes la posibilidad de mantener y personalizar su vehículo, les ofrece también todos los repuestos y accesorios originales para los vehículos a los cuales damos servicios, Mercedes Benz, BMW y Porsche.
+</p>
+</div>
+
+<br>
+<br>
+<br>
+
+
+
+	<form id="myform">
+
+		<h2>Formulario de Contacto </h2>
+
+		<label></label> <br>
+		<input name="name" type="text" placeholder="Nombre">
+		
+
+
+		<label></label> <br>
+		<input name="name2" type="text" placeholder="Apellido">
+
+
+
+		<label></label> <br>
+		<input name="id" id="id_number" type="text" placeholder="Cédula o No. pasaporte">
+
+
+
+		<label></label><br>
+		<input name="email" type="text" placeholder="Email">
+
+
+
+		<label></label> <br>
+		<input name="phone" type="text" id="phone_number" placeholder="Teléfono">
+
+
+
+		<label></label> <br>
+		<input name="address" type="text" placeholder="Direcci&oacute;n completa">
+
+
+
+		<div class="form-group">
+    <label for="exampleInputMessage"></label>
+    <input type="Text" class="form-control" id="exampleInputMessage1" placeholder="Escribe tu mensaje" required>
+  </div>
+
+	
+
+		<button form="myform" type="submit" class="send">Enviar</button>
+
+	</form>
+
+	  <footer>
+      <p>&copy; Evertsz Auto Tech 2017</p>
+      </footer>
+
+
+
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="script.js"></script>
+
+<script>
+$().ready(function() {
+  
+  $("#myform").validate({
+    rules: {
+      name: "required",
+      name2: "required",
+      message: "required",
+      id: "required",
+      phone: "required",
+      activity: {
+      	required: true
+      },
+      email: {
+      required: true,
+      email: true
+      },
+    },
+    messages: {
+      name: "<br />Hola esto es una prueba",
+      name2: "<br />Por favor introduzca su apellido",
+      id: "<br />Por favor introduzca su cédula",
+      phone: "<br />Por favor introduzca su n&uacute;mero de tel&eacute;fono",
+      message: "<br />Este campo es obligatorio",
+      activity: {
+        required: "<br />Por favor selecciona una actividad"
+      },
+      email: {
+        required: "<br />Por favor introduzca su e-mail",
+        email: "Por favor introduzca un e-mail válido"
+      },
+    }
+  });
+});
+
+jQuery(function($){
+   $("#phone_number").mask("(999) 999-9999");
+});
+
+
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 4000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>
